@@ -20,6 +20,9 @@ spec:
       containers:
         - name: springboot
           image: ghcr.io/ewis78/spring-petclinic:4.0.0-SNAPSHOT
+          env:
+            - name: SERVER_SERVLET_CONTEXT_PATH # On force le contexte de l'application à tp6
+              value: "/tp7"
           startupProbe:
             httpGet:
               path: /actuator/health/readiness
